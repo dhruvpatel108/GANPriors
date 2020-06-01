@@ -57,7 +57,7 @@ After cloning the repo, first change directory to the dataset of interest and fo
   The above command will download the [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset and split it into training and test set and store it in the directory specified by `--download_path` argument.
 * *MNIST:*
 
-  Run `trainer.py` script as explained [below](https://github.com/iclr-2020/BI-GANP/blob/master/README.md#learning-the-prior-distribution-training-of-gan). It will automatically download MNIST dataset and split it into training and test set before proceeding to training.
+  Run `trainer.py` script as explained [below](https://github.com/dhruvpatel108/GANPriors/blob/master/README.md#learning-the-prior-distribution-training-of-gan). It will automatically download MNIST dataset and split it into training and test set before proceeding to training.
 
 ### Training 
 The proposed algorithm works in two steps: In first step, we train a GAN on a particular dataset to learn the prior distribution and in second step depending upon task at hand, we perform different inference steps.
@@ -102,7 +102,7 @@ We propose different methods for probing posterior distribution in efficient way
     $ python oed_sampler.py --digit 2 --noise_var 1.0 --iter_no 0   
     $ python oed_stats.py --digit 2 --noise_var 1.0 --iter_no 0     
     ```
-    Note that both these scripts should be run multiple times (in the order) with incremental update of `iter_no` for iterative recovery of image as shown in the animation [above](https://github.com/iclr-2020/BI-GANP/new/master?readme=1#quantifying-uncertainty-with-gan-based-priors). (For CelebA, use `--img_no` argument instead of `--digit`).
+    Note that both these scripts should be run multiple times (in the order) with incremental update of `iter_no` for iterative recovery of image as shown in the animation [above](https://github.com/dhruvpatel108/GANPriors/new/master?readme=1#quantifying-uncertainty-with-gan-based-priors). (For CelebA, use `--img_no` argument instead of `--digit`).
 
     Quick tip: Run the shell script `run_oed.sh` with digit, noise_var, and no. of OED iterations as first 3 arguments (for 
 CelebA use the test set image number as first argument) to run the iterative oed experiment automatically.
