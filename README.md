@@ -21,23 +21,23 @@ optimal sensor placement location:
 
 CelebA             |  MNIST
 :-------------------------:|:-------------------------:
-![](https://github.com/iclr-2020/BI-GANP/blob/master/images/celeba_oed.gif)  |  ![](https://github.com/iclr-2020/BI-GANP/blob/master/images/mnist_oed.gif)
+![](https://github.com/dhruvpatel108/GANPriors/blob/master/images/celeba_oed.gif)  |  ![](https://github.com/dhruvpatel108/GANPriors/blob/master/images/mnist_oed.gif)
 
 Following figures demonstrate the effectiveness of the proposed method (in inferring field and quantifying uncertainty) for
 various inverse problems arising in computer vision and physics-based applications: 
 #### Image inpainting
 <p align="center">
-  <img width="460" height="300" src="https://github.com/iclr-2020/BI-GANP/blob/master/images/mnist_inpaint.png">
+  <img width="460" height="300" src="https://github.com/dhruvpatel108/GANPriors/blob/master/images/mnist_inpaint.png">
 </p>
 
 #### Image recovery/denoising
 <p align="center">
-  <img width="460" height="300" src="https://github.com/iclr-2020/BI-GANP/blob/master/images/celeba_recovery.png">
+  <img width="460" height="300" src="https://github.com/dhruvpatel108/GANPriors/blob/master/images/celeba_recovery.png">
 </p>
 
 #### Initial condition inversion (heat conduction)
 <p align="center">
-  <img width="360" height="200" src="https://github.com/iclr-2020/BI-GANP/blob/master/images/ic_inversion.png">
+  <img width="360" height="200" src="https://github.com/dhruvpatel108/GANPriors/blob/master/images/ic_inversion.png">
 </p>
 
 ## Requirements
