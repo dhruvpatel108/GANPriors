@@ -1,5 +1,5 @@
-# Quantifying uncertainty with GAN-based priors
-This is a TensorFlow implementation of [Qunatifying uncertainty with GAN-based priors](https://openreview.net/pdf?id=HyeAPeBFwS)
+# GAN-based Priors for Quantifying Uncertainty
+This is a TensorFlow implementation of [GAN-based Priors for Quantifying Uncertainty](https://arxiv.org/abs/2003.12597)
 work. Here, we provide code for our models, checkpoints and [dataset](https://github.com/iclr-2020/BI-GANP/blob/master/README.md#downloading-and-preparing-dataset) used to produce results of the paper.
 
 Bayesian inference is a powerful method used extensively to quantify the uncertainty in an inferred field given the measurement of a related field
