@@ -1,6 +1,6 @@
 # GAN-based Priors for Quantifying Uncertainty
 This is an official TensorFlow implementation of [GAN-based Priors for Quantifying Uncertainty](https://arxiv.org/abs/2003.12597) 
-work. Here, we provide code for our models, checkpoints and [dataset](https://github.com/dhruvpatel108/GANPriors/blob/master/README.md#downloading-and-preparing-dataset) used to produce results of the paper.
+work. Here, we provide code for our models, checkpoints (to be added) and [dataset](https://github.com/dhruvpatel108/GANPriors/blob/master/README.md#downloading-and-preparing-dataset) used to produce results of the paper.
 
 Bayesian inference is a powerful method used extensively to quantify the uncertainty in an inferred field given the measurement of a related field
 when the two are linked by a mathematical model. Despite its many applications, Bayesian inference faces two major 
@@ -71,12 +71,13 @@ $ python trainer.py --epoch 100 --z_dim 100 --train_batch_size 64 --lr 0.001
     * --n_critic: no. of discriminator updates for every generator update
     * --train_batch_size: batch size during training (note that this is different than the batch size during posterior inference)
     * --epoch: the max training epochs
+    * --lr: learning rate 
   * Logging
     * --log_freq: the frequency of printing out log info (default 1)
     * --save_freq: the frequency of saving a checkpoint (default 1000)
     * --sample_freq: the frequency of performing testing inference to save generated fake images during training (default 100)
   * --gpu_id: id of the gpu to be used for training
-  * --prefix: a nickname for the training
+  * --prefix: a nickname for the training (note that the name of folders will be based on this prefix. To avoid overwriting use different prefix for different runs).
 
 #### Posterior inference
 We propose different methods for probing posterior distribution in efficient way for different inference tasks.
