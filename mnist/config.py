@@ -8,7 +8,7 @@ def argparser():
     parser.add_argument('--train_batch_size', type=int, default=64, help='batch size for GAN training')
     parser.add_argument('--lr', type=float, default=0.0002)
     parser.add_argument('--epoch', type=int, default=1000)
-    parser.add_argument('--n_critic', type=int, default=5)
+    parser.add_argument('--n_critic', type=int, default=3)
     parser.add_argument('--gpu_id', type=int, default=0)
     parser.add_argument('--z_dim', type=int, default=100)   
     parser.add_argument('--seed_no', type=int, default=1008)
@@ -29,7 +29,7 @@ def argparser():
     # parameters for mcmc 
     parser.add_argument('--n_mcmc', type=int, default=64000)    
     parser.add_argument('--burn_mcmc', type=float, default=0.5)
-    parser.add_argument('--batch_size', type=int, default=1, help='batch size for posterior sampling')
+    parser.add_argument('--batch_size', type=int, default=1, help='batch size for mcmc sampling')
     
     # parameters for oed experiments
     parser.add_argument('--n_oed', type=int, default=64000)    
