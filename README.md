@@ -66,7 +66,6 @@ The proposed algorithm works in two steps: In first step, we train a GAN on a pa
 ```
 $ python trainer.py --epoch 100 --z_dim 100 --train_batch_size 64 --lr 0.001
 ```
-Please note that the code for WGAN-GP training was reused from [here](https://github.com/LynnHo/DCGAN-LSGAN-WGAN-GP-DRAGAN-Tensorflow-2/tree/v1) with minor modifications.
 * Selected arguments (see `config.py` for more details):
   * Hyperparameters
     * --n_critic: no. of discriminator updates for every generator update
@@ -95,26 +94,9 @@ We propose different methods for probing posterior distribution in efficient way
       * --batch_size: batch size for MCMC inference (should always be one)
       
     For CelebA, use `--img_no` argument instead of `--digit` (see `config.py` for details).
- 2. *Optimal Experimental Design(OED)/Active learning*:
-
-    Here, the goal is to iteratively recover image with minumum no. of measurements using variance information.
-    ```
-    $ python oed_sampler.py --digit 2 --noise_var 1.0 --iter_no 0   
-    $ python oed_stats.py --digit 2 --noise_var 1.0 --iter_no 0     
-    ```
-    Note that both these scripts should be run multiple times (in the order) with incremental update of `iter_no` for iterative recovery of image as shown in the animation [above](https://github.com/dhruvpatel108/GANPriors/new/master?readme=1#quantifying-uncertainty-with-gan-based-priors). (For CelebA, use `--img_no` argument instead of `--digit`).
-
-    Quick tip: Run the shell script `run_oed.sh` with digit, noise_var, and no. of OED iterations as first 3 arguments (for 
-CelebA use the test set image number as first argument) to run the iterative oed experiment automatically.
-    ```
-    ./run_oed.sh 2 1.0 12
-    ```
-     * Selected arguments (see `config.py` for more details):
-        * --tile_size: size of the tile to be revealed at each OED iteration
-        * --iter_no: OED iteration number
-        * --burn_oed: percentage of MCMC samples to be discarded as burn-in period (default=0.5) 
+ 
     
- 3. *Image inpainting*:
+ 2. *Image inpainting*:
 
     Here the goal is to infer the true field and associated uncertainty from a noisy and occluded measurement.
     ```
@@ -129,3 +111,16 @@ CelebA use the test set image number as first argument) to run the iterative oed
      
       
     For CelebA, use `--img_no` argument instead of `--digit` (see `config.py` for details).
+
+### Cite the paper
+If you find this useful, please cite
+```
+@article{Patel2020b,
+archivePrefix = {arXiv},
+arxivId = {2003.12597},
+author = {Patel, Dhruv V. and Oberai, Assad A.},
+doi = {10.13140/RG.2.2.28806.32322},
+title = {{GAN-based Priors for Quantifying Uncertainty}},
+url = {http://arxiv.org/abs/2003.12597 http://dx.doi.org/10.13140/RG.2.2.28806.32322},
+year = {2020}
+}
