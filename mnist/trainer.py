@@ -1,7 +1,7 @@
 """
 code for training of WGAN-GP model
 
-reused from https://github.com/LynnHo/DCGAN-LSGAN-WGAN-GP-DRAGAN-Tensorflow-2/tree/v1
+reused with modification from https://github.com/LynnHo/DCGAN-LSGAN-WGAN-GP-DRAGAN-Tensorflow-2/tree/v1
 """
 from __future__ import division
 from __future__ import print_function
@@ -26,6 +26,8 @@ z_dim = PARAMS.z_dim
 n_critic = PARAMS.n_critic
 gpu_id = PARAMS.gpu_id
 save_dir = PARAMS.prefix+'_N{}'.format(N)
+np.random.seed(PARAMS.seed_no)
+
 ''' data '''
 utils.mkdir('./data/mnist/')
 imgs, _, _ = data.mnist_load('./data/mnist')
@@ -78,7 +80,7 @@ with tf.device('/gpu:%d' % gpu_id):
     g_step = tf.train.AdamOptimizer(learning_rate=lr, beta1=0.5).minimize(g_loss, var_list=g_var)
 
     # summaries
-    d_summary = utils.summary({wd: 'wd', gp: 'gp'})
+    d_summary = utils.summary({wd: 'wd', gp: 'gp', d_loss: 'd_loss'})
     g_summary = utils.summary({g_loss: 'g_loss'})
 
     # sample
@@ -120,13 +122,11 @@ try:
             # batch data
             real_ipt = data_pool.batch('img')
             z_ipt = np.random.normal(size=[batch_size, z_dim])
-            #_ = sess.run(assign_op, feed_dict={z: z_ipt})
             d_summary_opt, _ = sess.run([d_summary, d_step], feed_dict={real: real_ipt, z:z_ipt})
         summary_writer.add_summary(d_summary_opt, it)
 
         # train G
         z_ipt = np.random.normal(size=[batch_size, z_dim])
-        #_ = sess.run(assign_op, feed_dict={z: z_ipt})
         g_summary_opt, _ = sess.run([g_summary, g_step], feed_dict={z:z_ipt})
         summary_writer.add_summary(g_summary_opt, it)
 
@@ -141,7 +141,6 @@ try:
 
         # sample
         if (it + 1) % PARAMS.sample_freq == 0:
-            #_ = sess.run(assign_op, feed_dict={z: z_ipt_sample})
             f_sample_opt = sess.run(f_sample, feed_dict={z:z_ipt_sample})
 
             sample_dir = './sample_images_while_training/'+save_dir
