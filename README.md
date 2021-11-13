@@ -1,6 +1,5 @@
 # GAN-based Priors for Quantifying Uncertainty
-This is an official TensorFlow implementation of [GAN-based Priors for Quantifying Uncertainty](https://arxiv.org/abs/2003.12597) 
-work. Here, we provide code for our models, checkpoints (to be added) and [dataset](https://github.com/dhruvpatel108/GANPriors/blob/master/README.md#downloading-and-preparing-dataset) used to produce results of the paper.
+This is an official TensorFlow implementation of [GAN-based Priors for Quantifying Uncertainty in Supervised Learning](https://epubs.siam.org/doi/10.1137/20M1354210) work. Here, we provide code for our models, checkpoints (to be added) and [dataset](https://github.com/dhruvpatel108/GANPriors/blob/master/README.md#downloading-and-preparing-dataset) used to produce results of the paper.
 
 ## Objective
 Bayesian inference is a powerful method used extensively to quantify the uncertainty in an inferred field given the measurement of a related field
@@ -117,12 +116,16 @@ We propose different methods for probing posterior distribution in efficient way
 ### Cite the paper
 If you find this useful, please cite
 ```
-@article{Patel2020b,
-archivePrefix = {arXiv},
-arxivId = {2003.12597},
+@article{Patel2021GAN,
 author = {Patel, Dhruv V. and Oberai, Assad A.},
-doi = {10.13140/RG.2.2.28806.32322},
-title = {{GAN-based Priors for Quantifying Uncertainty}},
-url = {http://arxiv.org/abs/2003.12597 http://dx.doi.org/10.13140/RG.2.2.28806.32322},
-year = {2020}
+doi = {10.1137/20M1354210},
+journal = {SIAM/ASA Journal on Uncertainty Quantification},
+month = {jan},
+number = {3},
+pages = {1314--1343},
+publisher = {Society for Industrial {\&} Applied Mathematics (SIAM)},
+title = {{GAN-Based Priors for Quantifying Uncertainty in Supervised Learning}},
+volume = {9},
+year = {2021}
 }
+
